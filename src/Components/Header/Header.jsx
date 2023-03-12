@@ -1,23 +1,41 @@
-import { useRef } from 'react'
 import './header.css'
 
 const Header = () => {
-    const sideNavSec = useRef()
-
-    const toggleSideNav = () => {
-        sideNavSec.current.classList.toggle('active')
-    }
 
     return (
         <header className='mainHeader'>
             <nav className='mainNavigation' aria-label='main-navigation'>
                 <div className='leftMainNav'>
                     <input type='checkbox' id='dummyCheckbox' />
-                    <label htmlFor='dummyCheckbox' className='hamburger' onClick={toggleSideNav}>
+                    <label htmlFor='dummyCheckbox' className='hamburger'>
                         <span></span>
                         <span></span>
                         <span></span>
                     </label>
+                    <aside className='secondaryNav'>
+                        <nav className='sideBarNav' aria-label='sidebar-navigation'>
+                            <ul>
+                                <li className='profileImgCont'>
+                                    <img src='src/assets/profileIconNav.png' alt='' />
+                                </li>
+                                <li>
+                                    <a href='#'>Login/Sign up</a>
+                                </li>
+                                <li>
+                                    <a href='#'>About us</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Services</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Location</a>
+                                </li>
+                                <li>
+                                    <a href='#'>Help & Support</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </aside>
                     <div className='mainIconCont'>
                         <a href='#'>
                             <img src='src/assets/clothXPrimaryLogo-1.png' alt='' />
@@ -45,30 +63,6 @@ const Header = () => {
                     </a>
                 </div>
             </nav>
-            <aside ref={sideNavSec}>
-                <nav className='sideBarNav' aria-label='sidebar-navigation'>
-                    <ul>
-                        <li className='profileImgCont'>
-                            <img src='src/assets/profileIconNav.png' alt='' />
-                        </li>
-                        <li>
-                            <a href='#'>Login/Sign up</a>
-                        </li>
-                        <li>
-                            <a href='#'>About us</a>
-                        </li>
-                        <li>
-                            <a href='#'>Services</a>
-                        </li>
-                        <li>
-                            <a href='#'>Location</a>
-                        </li>
-                        <li>
-                            <a href='#'>Help & Support</a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
         </header>
     )
 }
